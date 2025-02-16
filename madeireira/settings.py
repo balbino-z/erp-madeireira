@@ -83,12 +83,16 @@ WSGI_APPLICATION = 'madeireira.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import dj_database_url
+
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://madeireira_user:REMOVED-PASSWORD@removed-host/madeireira',
-        conn_max_age=600
+        default="postgresql://madeireira_db_user:REMOVED-PASSWORD@removed-host/madeireira_db",
+        conn_max_age=600,
+        ssl_require=True
     )
 }
+
 
 
 
