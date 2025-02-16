@@ -84,16 +84,20 @@ WSGI_APPLICATION = 'madeireira.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 import dj_database_url
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default="postgresql://madeireira_db_user:REMOVED-PASSWORD@removed-host/madeireira_db",
-        conn_max_age=600,
-        conn_health_checks=True,
-        ssl_require=True
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'madeireira',
+        'USER': 'madeireira_user',
+        'PASSWORD': 'REMOVED-PASSWORD',
+        'HOST': 'removed-host',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+            'sslrootcert': os.path.join(BASE_DIR, 'global-bundle.pem'),  # Caminho do certificado
+        },
+    }
 }
-
 
 CSRF_TRUSTED_ORIGINS = [
     'https://madeireira.onrender.com',  # Sua URL do Render
