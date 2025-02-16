@@ -91,14 +91,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'madeireira',  # Nome do banco
-        'USER': 'madeireira_user',  # Usuário
-        'PASSWORD': 'REMOVED-PASSWORD',  # Senha
-        'HOST': 'removed-host',  # Hostname
-        'PORT': '5432',  # Porta
+        'NAME': 'madeireira',
+        'USER': 'madeireira_user',
+        'PASSWORD': 'REMOVED-PASSWORD',
+        'HOST': 'removed-host',
+        'PORT': '5432',
         'OPTIONS': {
-            'sslmode': 'require',  # Modo SSL
-            'sslrootcert': os.path.join(BASE_DIR, 'prod-ca-2021.pem'),  # Certificado
+            'sslmode': 'disable',  # Desativa SSL (não seguro, mas funcional)
         },
     }
 }
