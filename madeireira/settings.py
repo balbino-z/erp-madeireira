@@ -90,15 +90,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'madeireira',
-        'USER': 'madeireira_user',
-        'PASSWORD': 'REMOVED-PASSWORD',
-        'HOST': 'removed-host',
-        'PORT': '5432',
-        'OPTIONS': {
-            'sslmode': 'disable',  # Desativa SSL (não seguro, mas funcional)
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
