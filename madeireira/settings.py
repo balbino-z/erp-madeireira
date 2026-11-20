@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'madeireira.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASE_URL (e.g. postgres://user:REMOVED-PASSWORD@host:5432/db) comes from the environment;
+# DATABASE_URL (e.g. postgres://user:password@host:5432/db) comes from the environment;
 # without it, a local SQLite file is used for development.
 DATABASES = {
     'default': dj_database_url.config(
