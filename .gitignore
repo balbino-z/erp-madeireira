@@ -32,3 +32,6 @@ logs/
 
 # Arquivos de mídia uploadados
 media/
+# Credentials and certificates
+*.pem
+db.pgsql
